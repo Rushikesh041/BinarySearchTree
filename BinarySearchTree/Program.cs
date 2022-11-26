@@ -18,7 +18,16 @@
             tree.Add(57);
             tree.Add(66);
             tree.Add(11);
-
+            int data = 61;
+            Node<int> node = tree.Find(data, tree.Root);
+            if (node == null)
+            {
+                Console.WriteLine($"{data} is not present in Binary Tree");
+            }
+            else
+            {
+                Console.WriteLine($"{node.Data} is Present in Binaray Tree");
+            }
             Console.WriteLine("******** Elements in Binary Trees **********");
             tree.DisplayInorder(tree.Root);
             Console.WriteLine();
