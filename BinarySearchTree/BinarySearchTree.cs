@@ -9,6 +9,7 @@ namespace BinarySearchTree
     class BinarySearchTree<T> where T : IComparable<T>
     {
         public Node<T> Root;
+        private int size = 0;
         public void Add(T data)
         {
             Node<T> parent = null, current = Root;
@@ -42,10 +43,15 @@ namespace BinarySearchTree
         {
             if (parent != null)
             {
+                size++;
                 DisplayInorder(parent.leftNode);
                 Console.Write(parent.Data + " ");
                 DisplayInorder(parent.rightNode);
             }
+        }
+        public void Size()
+        {
+            Console.Write($"\nThe Size of Binary Tree is : {size}\n");
         }
     }
 }
